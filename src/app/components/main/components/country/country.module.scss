@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  gap: 16px;
+  background: #F7F7F7;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.flag {
+  img {
+    border-radius: 50%;
+  }
+}
+
+.flagAndNameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .wrapper {
+    border-radius: 0;
+    background-color: white;
+  }
+}

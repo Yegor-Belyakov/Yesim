@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js', 'mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
 };
 
 export default nextConfig;

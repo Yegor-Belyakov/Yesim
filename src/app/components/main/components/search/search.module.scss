@@ -1,0 +1,29 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px 12px 16px;
+  background: #907f6f1a;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  height: 22px;
+  min-width: 300px;
+  width: 100%;
+  font-family: Inter;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.11999999731779099px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+}

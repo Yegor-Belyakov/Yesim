@@ -1,0 +1,48 @@
+.headerWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 206px;
+  background-color: #FFFFFF;
+}
+
+.headerBlocksWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.rightBlockDesctop {
+  display: flex;
+}
+
+.rightBlockMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1023px) { 
+  .rightBlockDesctop {
+    display: none;
+  }
+
+  .rightBlockMobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerWrapper {
+    padding: 0 100px;
+  }
+
+}
+
+
+@media only screen and (max-width: 576px) { 
+
+  .headerWrapper {
+    padding: 0 16px;
+  }
+
+}

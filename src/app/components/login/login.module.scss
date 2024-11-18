@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 278px);
+}
+
+
+.text {
+  font-family: Inter;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .text {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}

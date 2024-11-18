@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+  min-width: 170px;
+}
+
+.header {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.link:hover {
+  color: #FF7A00;
+  cursor: pointer;
+}

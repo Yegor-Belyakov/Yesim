@@ -1,0 +1,33 @@
+.wrapper {
+  padding: 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .header {
+    padding: 0 24px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.20000000298023224px;
+  }
+
+  .wrapper {
+    padding: 24px 0;
+  }
+}

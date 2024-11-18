@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.linksBlock {
+  display: flex;
+}
+
+.headerLogoIcon {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) { 
+  .linksBlock {
+    display: none;
+  }
+
+}

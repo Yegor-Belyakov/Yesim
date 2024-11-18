@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.languageDropWrapper {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.languageDropWrapper:hover {
+  background-color: #0000000F;
+  border-radius: 16px;
+}
+
+.arrowIcon {
+  padding-top: 4px;
+}
+
+.arrowIconToUp {
+  padding-top: 4px;
+  rotate: 180deg;
+}
+
+.languageItem {
+  cursor: pointer;
+  padding: 12px;
+}
+
+.languageItem:hover {
+  border-radius: 16px;
+  background-color: #0000000F;
+}
+
+.loginButton {
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 15px 24px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.11999999731779099px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  background-color: #2E2F32;
+  border-radius: 16px;
+}
+
+.dropMenuOpen {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  position: absolute;
+  width: inherit;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 16px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0px 2px 140px 0px var(--black500);
+}
+
+.dropMenuClose {
+  display: none;
+}
