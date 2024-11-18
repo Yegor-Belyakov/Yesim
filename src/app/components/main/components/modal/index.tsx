@@ -5,6 +5,7 @@ import styles from "./modal.module.scss";
 import { useScrollLock } from "@/app/hooks/useScrollLock";
 import CloseIcon from "@/app/icons/closeIcon";
 import { useRouter } from  "next/navigation";
+import { useTranslation } from "react-i18next";
 
 interface ModalProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const setIsLocked = useScrollLock();
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter()
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isOpen) {
@@ -41,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.modal}>
-        <div className={styles.header}>Войдите, чтобы продолжить</div>
+        <div className={styles.header}>{t('signInToContinue')}</div>
         <div
           className={styles.inputAndButtonWrapper}
           onClick={() => inputRef.current?.focus()}
@@ -62,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             <p style={{ color: "red" }}>{`Почта должна содержать символ "@"`}</p>
           )}
           <div className={styles.buttonWrapper} onClick={checkEmailHandler}>
-            <div className={styles.button}>Продолжить</div>
+            <div className={styles.button}>{t('continue')}</div>
           </div>
         </div>
 

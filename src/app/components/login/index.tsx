@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./login.module.scss";
 import CheckIcon from "@/app/icons/checkIcon";
+import { useTranslation } from "react-i18next";
 
 function Login() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   useEffect(() => {
     const emailFromLocalStorage = localStorage.getItem("email");
@@ -20,7 +22,7 @@ function Login() {
       <div className={styles.iconCheck}>
         <CheckIcon />
       </div>
-      <div className={styles.text}>Вы успешно вошли через почту {email}</div>
+      <div className={styles.text}>{`${t('viaEmail')} ${email}`}</div>
     </div>
   );
 }

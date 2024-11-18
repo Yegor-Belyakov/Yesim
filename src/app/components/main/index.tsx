@@ -9,6 +9,8 @@ import { getCountries, ICountry } from "@/app/services/api";
 import Flag from "../flag";
 import ArrowRightIcon from "@/app/icons/arrowRight";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/app/context/languageContext";
 
 function Main({
   searchValue,
@@ -19,18 +21,20 @@ function Main({
 }) {
   const [countries, setCountries] = useState<ICountry[]>([]);
   const router = useRouter();
-
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const res = await getCountries("ru");
+        const res = await getCountries(language);
+
         setCountries(res);
       } catch (error) {
         console.error("Error fetching countries:", error);
       }
     };
     fetchCountries();
-  }, []);
+  }, [language]);
 
   const dropItemHandler = (countryData: ICountry) => {
     localStorage.setItem("countryData", JSON.stringify(countryData));
@@ -46,9 +50,7 @@ function Main({
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerAndSearchWrapper}>
-        <div className={styles.header}>
-          eSIM карты с интернетом для путешествий и бизнеса
-        </div>
+        <div className={styles.header}>{t("simTitle")}</div>
         <div className={styles.search} onClick={(e) => e.stopPropagation()}>
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
           {searchValue.length != 0 &&
