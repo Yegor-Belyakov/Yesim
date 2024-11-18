@@ -6,9 +6,11 @@ import HowItWork from "../main/components/howItWork";
 import Flag from "../flag";
 import { ICountry } from "@/app/services/api";
 import TowerIcon from "@/app/icons/tower";
+import { useTranslation } from "react-i18next";
 
 function CountryCard() {
   const [country, setCountry] = useState<ICountry | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const countryData = localStorage.getItem("countryData");
@@ -26,13 +28,13 @@ function CountryCard() {
         <div>
           <div className={styles.cardHeaderTitle}>{country?.country}</div>
           <div className={styles.cardHeaderSubTitle}>
-            Туристические SIM-карты с интернетом
+          {t('travelSim')}
           </div>
         </div>
         {country && <Flag flag={country.iso} />}
       </div>
       <div className={styles.cardMain}>
-        <div className={styles.cardMainTitle}>Страны и операторы</div>
+        <div className={styles.cardMainTitle}>{t('countriesOperators')}</div>
         <div className={styles.cardMainBody}>
           {country && (
             <div className={styles.flagWrapper}>

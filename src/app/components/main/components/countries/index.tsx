@@ -4,10 +4,11 @@ import styles from "./countries.module.scss";
 import Country from "../country";
 import { ICountry } from "@/app/services/api";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 function Countries({ countries }: { countries: ICountry[] }) {
   const [showAll, setShowAll] = useState(false);
-
+  const { t } = useTranslation();
   const router = useRouter();
 
   const handleCountryClick = (countryData: ICountry) => {
@@ -31,7 +32,7 @@ function Countries({ countries }: { countries: ICountry[] }) {
         onClick={() => setShowAll(!showAll)}
         className={styles.showAllButton}
       >
-        {showAll ? "Показать популярные страны" : "Показать все страны"}
+        {showAll ? t('popularCountries') : t('showAllCountries')}
       </button>
     </>
   );
