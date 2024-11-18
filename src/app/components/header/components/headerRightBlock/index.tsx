@@ -12,17 +12,25 @@ function HeaderRightBlock() {
   const [auth, setAuth] = useState(false);
   const { openModal } = useModal();
   const { t, i18n } = useTranslation();
-  const { language, setLanguage } = useLanguage();
+  const { setLanguage } = useLanguage();
   const router = useRouter();
 
   useEffect(() => {
     setAuth(localStorage.getItem("email") !== null);
   }, []);
 
+  const [l, setL] = useState("");
+  useEffect(() => {
+    i18n.changeLanguage(localStorage.getItem("myLanguage") || "ru");
+    setL(localStorage.getItem("myLanguage") || "ru");
+  }, []);
+
   const handleLangSwitch = (lang: string) => {
+    localStorage.setItem("myLanguage", lang);
+    setL(lang);
     setLanguage(lang === "ru" ? "ru" : "en");
-    setIsOpenDrop(false);
     i18n.changeLanguage(lang);
+    setIsOpenDrop(false);
   };
 
   return (
@@ -32,9 +40,7 @@ function HeaderRightBlock() {
           className={styles.languageDropWrapper}
           onClick={() => setIsOpenDrop(!isOpenDrop)}
         >
-          <div className={styles.languageDrop}>
-            {language == "ru" ? "RUS" : "ENG"}
-          </div>
+          <div className={styles.languageDrop}>{l == "ru" ? "RUS" : "ENG"}</div>
           <div className={isOpenDrop ? styles.arrowIconToUp : styles.arrowIcon}>
             <ArrowDownIcon color="#00000075" />
           </div>
@@ -65,10 +71,14 @@ function HeaderRightBlock() {
           {t("signIn")}
         </div>
       ) : (
-        <div className={styles.loginButton} onClick={() => {localStorage.removeItem('email')
-          router.push(`/`);
-        }}>
-          {t('signOut')}
+        <div
+          className={styles.loginButton}
+          onClick={() => {
+            localStorage.removeItem("email");
+            router.push(`/`);
+          }}
+        >
+          {t("signOut")}
         </div>
       )}
     </div>
