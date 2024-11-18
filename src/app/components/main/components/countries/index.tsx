@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import styles from "./countries.module.scss";
 import Country from "../country";
 import { ICountry } from "@/app/services/api";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function Countries({ countries }: { countries: ICountry[] }) {
   const [showAll, setShowAll] = useState(false);
 
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleCountryClick = (countryData: ICountry) => {
     localStorage.setItem("countryData", JSON.stringify(countryData));

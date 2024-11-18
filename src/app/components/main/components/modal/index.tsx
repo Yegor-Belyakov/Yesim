@@ -59,7 +59,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             />
           </div>
           {showEmailError && (
-            <p style={{ color: "red" }}>Почта должна содержать символ "@"</p>
+            <p style={{ color: "red" }}>{`Почта должна содержать символ "@"`}</p>
           )}
           <div className={styles.buttonWrapper} onClick={checkEmailHandler}>
             <div className={styles.button}>Продолжить</div>

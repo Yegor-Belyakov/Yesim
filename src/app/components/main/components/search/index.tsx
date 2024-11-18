@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./search.module.scss";
 import SearchIcon from "@/app/icons/main/searchIcon";
 

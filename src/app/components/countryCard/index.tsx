@@ -43,8 +43,8 @@ function CountryCard() {
           )}
           {country && (
             <div className={styles.operatorsWrapper}>
-              {country.operators.map((el) => (
-                <div className={styles.operators}>
+              {country.operators.map((el,i) => (
+                <div key={i} className={styles.operators}>
                   {el.phone_view} <TowerIcon />
                 </div>
               ))}

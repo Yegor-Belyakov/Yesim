@@ -37,7 +37,7 @@ function Main({
     router.push(`${countryData.url}`);
   };
 
-  let searchResultCountries = countries.filter(
+  const searchResultCountries = countries.filter(
     (el: ICountry) =>
       el.country.toLowerCase().includes(searchValue.toLowerCase()) ||
       el.iso.toLowerCase().includes(searchValue.toLowerCase())
@@ -73,7 +73,7 @@ function Main({
                       </div>
                     </div>{" "}
                     <div className={styles.arrowIcon}>
-                      <ArrowRightIcon color="rgba(0, 0, 0, 0.46)" />
+                      <ArrowRightIcon />
                     </div>
                   </div>
                 ))}

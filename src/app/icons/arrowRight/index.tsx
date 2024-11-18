@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArrowRightIcon = ({ color }: { color: string }) => (
+const ArrowRightIcon = () => (
   <React.Fragment>
     <svg
       xmlns="http://www.w3.org/2000/svg"
